@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import './providers/cart.dart';
 import './screens/products_overview.dart';
+import './screens/cart.dart';
 import './screens/product_detail.dart';
 import './providers/products.dart';
 
@@ -10,8 +12,11 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider.value(
-      value: Products(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(value: Products()),
+        ChangeNotifierProvider.value(value: Cart())
+      ],
       child: MaterialApp(
         title: 'iShop 2020',
         theme: ThemeData(
@@ -22,9 +27,9 @@ class MyApp extends StatelessWidget {
         home: ProductsOverviewScreen(),
         routes: {
           ProductDetailScreen.routeName: (ctx) => ProductDetailScreen(),
+          CartScreen.routeName: (ctx) => CartScreen()
         },
       ),
     );
   }
 }
-
