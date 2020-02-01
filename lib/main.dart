@@ -10,8 +10,8 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (ctx) => Products(),
+    return ChangeNotifierProvider.value(
+      value: Products(),
       child: MaterialApp(
         title: 'iShop 2020',
         theme: ThemeData(
@@ -28,16 +28,3 @@ class MyApp extends StatelessWidget {
   }
 }
 
-//class MyHomePage extends StatelessWidget {
-//  @override
-//  Widget build(BuildContext context) {
-//    return Scaffold(
-//      appBar: AppBar(
-//        title: Text('iShop! 2020'),
-//      ),
-//      body: Center(
-//        child: Text('Let\'s build a shop!'),
-//      ),
-//    );
-//  }
-//}
