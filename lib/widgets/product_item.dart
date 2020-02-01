@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
-
-
 class ProductItem extends StatelessWidget {
-
   final String id;
   final String title;
   final String imageUrl;
@@ -13,21 +10,29 @@ class ProductItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridTile(
-      child: Image.network(
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(5),
+      child: GridTile(
+        child: Image.network(
           imageUrl,
           fit: BoxFit.cover,
-      ),
-      footer: GridTileBar(
-        backgroundColor: Colors.black54,
-        leading: IconButton(
-            icon: Icon(Icons.favorite),
-            onPressed: () {}
         ),
-        title: Text(title, textAlign: TextAlign.center,),
-        trailing: IconButton(
+        footer: GridTileBar(
+          backgroundColor: Colors.black87,
+          leading: IconButton(
+            icon: Icon(Icons.favorite),
+            color: Colors.deepOrange,
+            onPressed: () {},
+          ),
+          title: Text(
+            title,
+            textAlign: TextAlign.center,
+          ),
+          trailing: IconButton(
             icon: Icon(Icons.shopping_cart),
+            color: Colors.amber,
             onPressed: () {}
+          ),
         ),
       ),
     );
