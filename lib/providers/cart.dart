@@ -30,7 +30,6 @@ class Cart with ChangeNotifier {
       total += item.price * item.quantity;
     });
     return total;
-
   }
 
   void addItem(String productId, double price, String title, int quantity) {
@@ -51,6 +50,11 @@ class Cart with ChangeNotifier {
               price: price,
               quantity: 1));
     }
+    notifyListeners();
+  }
+
+  void removeItem(String productId) {
+    _items.remove(productId);
     notifyListeners();
   }
 }
