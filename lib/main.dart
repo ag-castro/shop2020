@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+
+import './providers/orders.dart';
 import './providers/cart.dart';
 import './screens/products_overview.dart';
 import './screens/cart.dart';
@@ -15,7 +17,8 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider.value(value: Products()),
-        ChangeNotifierProvider.value(value: Cart())
+        ChangeNotifierProvider.value(value: Cart()),
+        ChangeNotifierProvider.value(value: Orders())
       ],
       child: MaterialApp(
         title: 'iShop 2020',

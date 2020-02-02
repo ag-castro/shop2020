@@ -21,17 +21,21 @@ class ProductDetailScreen extends StatelessWidget {
             Container(
               height: 250,
               width: double.infinity,
-              child: Image.network(loadedProduct.imageUrl, fit: BoxFit.cover,),
-            ),
-            SizedBox(height: 10,),
-            Text(
-              '\$${loadedProduct.price}',
-              style: TextStyle(
-                color: Colors.grey,
-                fontSize: 20
+              child: Image.network(
+                loadedProduct.imageUrl,
+                fit: BoxFit.cover,
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              '\$${loadedProduct.price}',
+              style: TextStyle(color: Colors.grey, fontSize: 20),
+            ),
+            SizedBox(
+              height: 10,
+            ),
             Container(
               width: double.infinity,
               padding: EdgeInsets.symmetric(horizontal: 10),
@@ -40,16 +44,12 @@ class ProductDetailScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
                 softWrap: true,
                 style: TextStyle(
-                  fontSize: 26,
-                  color: Theme.of(context).accentColor
-                ),
+                    fontSize: 26, color: Theme.of(context).accentColor),
               ),
             )
           ],
         ),
       ),
-
-      );
-
+    );
   }
 }
